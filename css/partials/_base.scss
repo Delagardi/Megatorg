@@ -1,0 +1,95 @@
+$widthPage: 1200px;
+$red: #9f3544;
+$grey: #f1f1f1;
+
+// Font Face Mixin start
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+// Font Face Mixin end
+%fontText {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+
+%fontSearch {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color: #929292;
+}
+
+%fontNavMenu {
+  font-family: "HelveticaMedium", sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+%fontMainHeader {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 36px;
+  font-weight: 100;
+  color: #333;
+  text-transform: uppercase;
+}
+
+%fontMainSubHeader {
+  font-family: "HelveticaBold", sans-serif;
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+%fontLinkBtn {
+  font-family: "HelveticaBold", sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+%fontShops {
+  font-family: "HelveticaBold", sans-serif;
+  font-size: 36px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+%fontFooterContacts {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: #c84456;
+  text-transform: uppercase;
+}
+
+%fontFooterContactsText {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: #fff;
+}

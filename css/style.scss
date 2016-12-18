@@ -1,0 +1,683 @@
+@import "vendor/_mynormalize.scss";
+@import "partials/_base.scss";
+
+/*=======================================================*/
+/* COMMON STYLE START */
+/*=======================================================*/
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+@include font-face(HelveticaRoman, "../fonts/HelveticaNeueCyr-Roman", null, Roman, otf);
+@include font-face(HelveticaMedium, "../fonts/HelveticaNeueCyr-Medium", null, Medium, otf);
+@include font-face(HelveticaBold, "../fonts/HelveticaNeueCyr-Bold", Bold, null, otf);
+
+body {
+  @extend %fontText;
+  background: url("../img/bg.jpg");
+}
+
+.wrapper {
+  width: 100%;
+}
+/*=======================================================*/
+/* COMMON STYLE END */
+/*=======================================================*/
+
+/*=======================================================*/
+/* HEADER START */
+/*=======================================================*/
+
+.bg-header {
+  background: $red;
+}
+
+.header {
+  width: 1200px;
+  height: 95px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo__img {
+  width: 216px;
+  height: 70px;
+  background: url("../img/logo.png") no-repeat;
+  display: block;
+}
+
+
+.header-social ul {
+  height: 35px;
+  line-height: 35px;
+
+  li {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+
+    a {
+      display: block;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+/* Social block */
+.vk {
+  background: url("../img/sprite-icon.png") 0 0 no-repeat;
+}
+
+.vk:hover {
+  background: url("../img/sprite-icon.png") 0 -35px no-repeat; 
+}
+
+.fb {
+  background: url("../img/sprite-icon.png") -40px 0 no-repeat;
+}
+
+.fb:hover {
+  background: url("../img/sprite-icon.png") -40px -35px no-repeat; 
+}
+
+.ok {
+  background: url("../img/sprite-icon.png") -80px 0 no-repeat;
+}
+
+.ok:hover {
+  background: url("../img/sprite-icon.png") -80px -35px no-repeat; 
+}
+
+.insta {
+  background: url("../img/sprite-icon.png") -120px 0 no-repeat;
+}
+
+.insta:hover {
+  background: url("../img/sprite-icon.png") -120px -35px no-repeat; 
+}
+
+input[type="search"] {
+  @extend %fontSearch;
+  border-radius: 20px;
+  height: 30px;
+  border: none;
+  padding: 8px 10px 5px 10px;
+  outline: none;
+}
+
+.header-search {
+  position: relative;
+}
+
+.header-search:before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 25px;
+  height: 25px;
+  background: url("../img/sprite-icon.png") 0 -72px no-repeat;
+}
+
+/*=======================================================*/
+/* HEADER END */
+/*=======================================================*/
+
+/*=======================================================*/
+/* NAV MENU START */
+/*=======================================================*/
+
+.nav-menu {
+  width: 1200px;
+  margin: 0 auto;
+  background: $red;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 10px;
+    margin: 25px 0 60px 0;
+
+    a {
+      @extend %fontNavMenu;
+
+      &:hover {
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+}
+
+.nav-menu > ul > li:first-child {
+      margin-left: 30px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: -31px;
+        top: 7px;
+        width: 25px;
+        height: 25px;
+        background: url("../img/sprite-icon.png") 0 -112px no-repeat;
+      }
+    }
+
+/*** Dropdown START ***/
+
+/*2th level*/
+
+ul.dropdown li {
+  position: relative;
+  background: $red;
+}
+.dropdown,
+.dropdown ul {
+  padding: 0;
+  list-style-type: none;
+}
+.dropdown ul {
+  position: absolute;
+  display: none;
+  width: 180px;
+  padding: 0;
+  margin-top: -1px;
+  box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.75);
+}
+.dropdown ul li {
+  display: inline;
+  float: left;
+  width: 100%;
+  margin-right: 0;
+  height: 55px;
+}
+.dropdown ul li a {
+  display: block;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+  margin: 0 5px;
+  font-size: 16px;
+}
+.dropdown ul li a:hover {
+  border-bottom: 1px solid #fff; 
+}
+.dropdown li:hover > ul {
+  display: block;
+  width: 220px;
+  height: auto;
+}
+
+/*** Dropdown END ***/
+
+/*=======================================================*/
+/* NAV MENU END */
+/*=======================================================*/
+
+/*=======================================================*/
+/* SLIDER END */
+/*=======================================================*/
+
+.slider {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*=======================================================*/
+/* SLIDER END */
+/*=======================================================*/
+
+/*=======================================================*/
+/* INFORMATION START */
+/*=======================================================*/
+
+.information {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.information h2 {
+  @extend %fontMainHeader;
+  padding-left: 35px;
+  border-bottom: 2px solid $red;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+  }
+}
+
+.information-news__header:before {
+  background: url("../img/sprite-icon.png") -40px -72px no-repeat;
+}
+
+.information-events__header:before {
+  background: url("../img/sprite-icon.png") -73px -72px no-repeat;
+}
+
+.information-articles__header:before {
+  background: url("../img/sprite-icon.png") -105px -72px no-repeat;
+}
+
+.information-news {
+  width: 360px;
+}
+
+.information-events {
+  width: 400px;
+}
+
+.information-articles {
+  width: 400px;
+}
+
+.information-news__item {
+  clear: both;
+  height: 238px;
+  margin-bottom: 20px;
+  background: $grey;
+}
+
+.information-news__item--img {
+  width: 150px;
+  float: left;
+}
+
+.information-news__item--content {
+  width: 210px;
+  float: right;
+}
+
+.information-news__item--content h4 {
+  @extend %fontMainSubHeader;
+  
+  text-align: center;
+  margin: 18px 20px auto 20px;
+  border-bottom: 1px solid $red;
+}
+
+.information-news__item--content p {
+  padding: 15px;
+  margin-bottom: 5px;
+}
+
+.information-news__btn {
+  @extend %fontLinkBtn;
+  background: $red;
+  padding: 8px 15px 8px 39px;
+  position: relative;
+}
+
+.information-news__btn:before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 10px;
+  top: 2px;
+  background: url("../img/sprite-icon.png") 0 -192px no-repeat;
+}
+
+.information-news__item--link {
+  text-align: center;
+}
+
+.information-events__slider--content {
+  background: $grey;
+  border-bottom: 5px solid $red;
+}
+
+.information-events__slider--content {
+  margin-top: -5px; 
+}
+
+.information-events__slider--content h4 {
+  @extend %fontMainSubHeader;
+  
+  text-align: center;
+  padding: 18px 0 0;
+  margin: 0 115px;
+  border-bottom: 1px solid $red;
+}
+
+.information-events__slider--content p {
+  padding: 15px;
+  margin-bottom: 5px;
+}
+
+.grid:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.grid {
+  position: relative;
+}
+.grid-item {
+  width: 250px;
+  height: 150px;
+}
+
+.grid-item--width2 {
+  width: 150px;
+}
+
+.grid-item--height2 {
+  height: 250px;
+}
+
+.item1, .item2, .item3, .item4, .item5, .item6 {
+  position: absolute;
+
+  img {
+    position: absolute;
+    z-index: -1;
+  }
+  p {
+    @extend %fontLinkBtn;
+
+    padding: 10px;
+    margin: 14px 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.item1 {
+  left: 0px;
+  top: 0px;
+}
+
+.item2 {
+  left: 250px;
+}
+
+.item3 {
+  left: 0px;
+  top: 150px;
+}
+
+.item4 {
+  left: 0px;
+  top: 400px;
+}
+
+.item5 {
+  left: 250px;
+  top: 250px;
+}
+
+.item6 {
+  left: 150px;
+  top: 400px;
+}
+
+/*=======================================================*/
+/* INFORMATION END */
+/*=======================================================*/
+
+/*=======================================================*/
+/* SHOPS START */
+/*=======================================================*/
+.shops {
+  margin: 0 auto;
+  width: 1200px;
+  margin-bottom: 140px;
+}
+
+.shops-header {
+  @extend %fontMainHeader;
+  padding-left: 35px;
+  border-bottom: 2px solid $red;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 0;
+    background: url("../img/sprite-icon.png") -136px -73px no-repeat;
+  }
+}
+
+.shop-books, .shop-sweet, .shop-kids, .shop-scin, .shop-store, .shop-services, .shop-electronics, .shop-wedding, .shop-house, .shop-parfums, .shop-all  {
+  min-height: 183px;
+
+  a {
+    @extend %fontShops;
+  
+    display: block;
+    margin: 0;
+    padding: 70px 10px 70px 100px;
+  }
+}
+
+.shop-books {
+  background: url("../upload/shops/books.jpg") no-repeat;
+
+  .hide {
+    background: #242424;
+  }
+}
+
+
+.shop-sweet {
+  background: url("../upload/shops/sweet.jpg") no-repeat;
+
+  .hide {
+    background: #41a1d1;
+  }
+}
+
+.shop-kids {
+  background: url("../upload/shops/kids.jpg") no-repeat;
+}
+
+.shop-scin {
+  background: url("../upload/shops/kozha.jpg") no-repeat;
+}
+
+.shop-store {
+  background: url("../upload/shops/univermags.jpg") no-repeat;
+}
+
+.shop-services {
+  background: url("../upload/shops/services.jpg") no-repeat;
+}
+
+.shop-electronics {
+  background: url("../upload/shops/electronics.jpg") no-repeat;
+}
+
+.shop-wedding {
+  background: url("../upload/shops/wedding.jpg") no-repeat;
+}
+
+.shop-house {
+  background: url("../upload/shops/home.jpg") no-repeat;
+}
+
+.shop-parfums {
+  background: url("../upload/shops/parfums.jpg") no-repeat;
+}
+
+.shop-all {
+  background: url("../upload/shops/allshops.jpg") no-repeat;
+}
+
+.hide {
+  height: 500px;
+}
+
+.hide ul {
+  padding: 100px 20px 20px 100px;
+}
+
+.hide ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.hide ul li {
+  width: 30%;
+  height: 30px;
+  float: left;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  position: relative;
+}
+
+.hide ul li:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -28px;
+  top: 0;
+  background: #fff;
+}
+
+.hide ul li a {
+  @extend %fontFooterContactsText;
+  padding: 0;
+}
+
+/*=======================================================*/
+/* SHOPS END */
+/*=======================================================*/
+
+/*=======================================================*/
+/* FOOTER END */
+/*=======================================================*/
+.bg-footer {
+  background: url("../img/bg-footer.jpg") no-repeat;
+}
+
+.footer {
+  width: 1200px;
+  margin: 0 auto;
+  min-height: 480px;
+}
+
+.footer-menu {
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 10px;
+    margin: 25px 0 60px 0;
+
+    li:first-child {
+      margin-left: 30px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: -31px;
+        top: 7px;
+        width: 25px;
+        height: 25px;
+        background: url("../img/sprite-icon.png") 0 -112px no-repeat;
+      }
+    }
+
+    a {
+      @extend %fontNavMenu;
+
+      &:hover {
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+}
+
+.footer-contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-contacts__item {
+  width: 20%;
+}
+
+.footer-contacts__item h4 {
+  @extend %fontFooterContacts;  
+  padding-left: 20px;
+  border-bottom: 2px solid #c84456;
+  margin-right: 20px;
+  position: relative;
+}
+
+.footer-contacts__item h4:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #c84456;
+}
+
+.footer-contacts__item p, .footer-contacts__item a {
+  @extend %fontFooterContactsText;
+  padding-right: 20px;
+}
+
+.footer-contacts__item ul {
+  padding-left: 25px;
+}
+
+.footer-contacts__item ul li {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.footer-contacts__item ul li:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: -28px;
+  top: -5px;
+  background: url("../img/sprite-icon.png") 0 -161px no-repeat;
+}
+
+.banner {
+  display: block;
+  width: 219px;
+  height: 48px;
+  background: url("../upload/banner.jpg") no-repeat;
+}
+
+/*=======================================================*/
+/* FOOTER END */
+/*=======================================================*/
